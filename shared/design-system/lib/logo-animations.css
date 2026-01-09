@@ -1,0 +1,468 @@
+/* TShape Logo Animation Library */
+
+/* Blink Animation - Both eyes become horizontal lines (no tips) - single thin row */
+@keyframes blink-to-line-row0 {
+  0%, 85%, 100% { transform: translateY(0); opacity: 1; }
+  90%, 95% { transform: translateY(18px); opacity: 1; }
+}
+
+@keyframes blink-to-line-row1 {
+  0%, 85%, 100% { transform: translateY(0); opacity: 1; }
+  90%, 95% { transform: translateY(12px); opacity: 1; }
+}
+
+@keyframes blink-to-line-row2 {
+  0%, 85%, 100% { transform: translateY(0); opacity: 1; }
+  90%, 95% { transform: translateY(6px); opacity: 1; }
+}
+
+@keyframes blink-to-line-row3 {
+  0%, 85%, 100% { transform: translateY(0); opacity: 1; }
+  90%, 95% { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes blink-fade-extra {
+  0%, 85%, 100% { opacity: 1; }
+  88%, 95% { opacity: 0; }
+}
+
+/* Eye Taller Animation - Eyes get taller */
+@keyframes logo-eye-taller {
+  0%, 50%, 100% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(1.5);
+  }
+  75% {
+    transform: scaleY(0.7);
+  }
+}
+
+/* Eye Shorter Animation - Eyes get shorter */
+@keyframes logo-eye-shorter {
+  0%, 50%, 100% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.5);
+  }
+  75% {
+    transform: scaleY(1.3);
+  }
+}
+
+/* Wink Animation - Move pixels to form wink line shape */
+/* Target positions for wink line:
+   - Horizontal line: y=22-28
+   - Square tip: x=75.5-85.5, y=28-40
+*/
+
+/* Animate each pixel to its target position or fade out */
+@keyframes wink-to-line-row0 {
+  0%, 70% { transform: translateY(0); opacity: 1; }
+  75%, 90% { transform: translateY(22px); opacity: 1; }
+  95%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wink-to-line-row1 {
+  0%, 70% { transform: translateY(0); opacity: 1; }
+  75%, 90% { transform: translateY(16px); opacity: 1; }
+  95%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wink-to-line-row2 {
+  0%, 70% { transform: translateY(0); opacity: 1; }
+  75%, 90% { transform: translateY(10px); opacity: 1; }
+  95%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wink-to-line-row3 {
+  0%, 70% { transform: translateY(0); opacity: 1; }
+  75%, 90% { transform: translateY(4px); opacity: 1; }
+  95%, 100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes wink-fade-extra {
+  0%, 70% { opacity: 1; }
+  73%, 90% { opacity: 0; }
+  95%, 100% { opacity: 1; }
+}
+
+/* For tip pixels - move to tip position */
+@keyframes wink-to-tip-row4 {
+  0%, 70% { transform: translate(0, 0); opacity: 1; }
+  75%, 90% { transform: translate(0, 4px); opacity: 1; }
+  95%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes wink-to-tip-row5 {
+  0%, 70% { transform: translate(0, 0); opacity: 1; }
+  75%, 90% { transform: translate(0, 4px); opacity: 1; }
+  95%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes wink-to-tip-row6 {
+  0%, 70% { transform: translate(0, 0); opacity: 1; }
+  75%, 90% { transform: translate(0, 4px); opacity: 1; }
+  95%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes wink-to-tip-row7 {
+  0%, 70% { transform: translate(0, 0); opacity: 1; }
+  75%, 90% { transform: translate(0, -2px); opacity: 1; }
+  95%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes wink-to-tip-row8 {
+  0%, 70% { transform: translate(0, 0); opacity: 1; }
+  75%, 90% { transform: translate(0, -8px); opacity: 1; }
+  95%, 100% { transform: translate(0, 0); opacity: 1; }
+}
+
+/* Cute Face Animation - Eyes become small and adorable */
+/* Just show 2 pixels per eye in a cute configuration */
+@keyframes cute-pixel-stay {
+  0%, 100% { opacity: 1; }
+}
+
+@keyframes cute-pixel-fade {
+  0%, 100% { opacity: 0; }
+}
+
+/* Sleep Animation - Transform eyes into Z shapes */
+/* Fade out eyes, fade in Z shapes */
+
+@keyframes sleep-eye-fade-out {
+  0%, 70%, 100% { opacity: 1; }
+  75% { opacity: 0; }
+  90% { opacity: 0; }
+  95%, 100% { opacity: 1; }
+}
+
+@keyframes sleep-z-fade-in {
+  0%, 70% { opacity: 0; }
+  75% { opacity: 1; }
+  90% { opacity: 1; }
+  95%, 100% { opacity: 0; }
+}
+
+/* Apply animations to eye groups */
+.logo-animate-blink #left-eye-0-0,
+.logo-animate-blink #left-eye-1-0,
+.logo-animate-blink #left-eye-2-0,
+.logo-animate-blink #left-eye-3-0,
+.logo-animate-blink #left-eye-4-0,
+.logo-animate-blink #right-eye-0-0,
+.logo-animate-blink #right-eye-1-0,
+.logo-animate-blink #right-eye-2-0,
+.logo-animate-blink #right-eye-3-0,
+.logo-animate-blink #right-eye-4-0 { 
+  animation: blink-to-line-row0 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); 
+}
+
+.logo-animate-blink #left-eye-0-1,
+.logo-animate-blink #left-eye-1-1,
+.logo-animate-blink #left-eye-2-1,
+.logo-animate-blink #left-eye-3-1,
+.logo-animate-blink #left-eye-4-1,
+.logo-animate-blink #right-eye-0-1,
+.logo-animate-blink #right-eye-1-1,
+.logo-animate-blink #right-eye-2-1,
+.logo-animate-blink #right-eye-3-1,
+.logo-animate-blink #right-eye-4-1 { animation: blink-to-line-row1 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-blink #left-eye-0-2,
+.logo-animate-blink #left-eye-1-2,
+.logo-animate-blink #left-eye-2-2,
+.logo-animate-blink #left-eye-3-2,
+.logo-animate-blink #left-eye-4-2,
+.logo-animate-blink #right-eye-0-2,
+.logo-animate-blink #right-eye-1-2,
+.logo-animate-blink #right-eye-2-2,
+.logo-animate-blink #right-eye-3-2,
+.logo-animate-blink #right-eye-4-2 { animation: blink-to-line-row2 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-blink #left-eye-0-3,
+.logo-animate-blink #left-eye-1-3,
+.logo-animate-blink #left-eye-2-3,
+.logo-animate-blink #left-eye-3-3,
+.logo-animate-blink #left-eye-4-3,
+.logo-animate-blink #right-eye-0-3,
+.logo-animate-blink #right-eye-1-3,
+.logo-animate-blink #right-eye-2-3,
+.logo-animate-blink #right-eye-3-3,
+.logo-animate-blink #right-eye-4-3 { animation: blink-to-line-row3 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-blink #left-eye-0-4,
+.logo-animate-blink #left-eye-1-4,
+.logo-animate-blink #left-eye-2-4,
+.logo-animate-blink #left-eye-3-4,
+.logo-animate-blink #left-eye-4-4,
+.logo-animate-blink #right-eye-0-4,
+.logo-animate-blink #right-eye-1-4,
+.logo-animate-blink #right-eye-2-4,
+.logo-animate-blink #right-eye-3-4,
+.logo-animate-blink #right-eye-4-4,
+.logo-animate-blink #left-eye-0-5,
+.logo-animate-blink #left-eye-1-5,
+.logo-animate-blink #left-eye-2-5,
+.logo-animate-blink #left-eye-3-5,
+.logo-animate-blink #left-eye-4-5,
+.logo-animate-blink #right-eye-0-5,
+.logo-animate-blink #right-eye-1-5,
+.logo-animate-blink #right-eye-2-5,
+.logo-animate-blink #right-eye-3-5,
+.logo-animate-blink #right-eye-4-5,
+.logo-animate-blink #left-eye-0-6,
+.logo-animate-blink #left-eye-1-6,
+.logo-animate-blink #left-eye-2-6,
+.logo-animate-blink #left-eye-3-6,
+.logo-animate-blink #left-eye-4-6,
+.logo-animate-blink #right-eye-0-6,
+.logo-animate-blink #right-eye-1-6,
+.logo-animate-blink #right-eye-2-6,
+.logo-animate-blink #right-eye-3-6,
+.logo-animate-blink #right-eye-4-6,
+.logo-animate-blink #left-eye-0-7,
+.logo-animate-blink #left-eye-1-7,
+.logo-animate-blink #left-eye-2-7,
+.logo-animate-blink #left-eye-3-7,
+.logo-animate-blink #left-eye-4-7,
+.logo-animate-blink #right-eye-0-7,
+.logo-animate-blink #right-eye-1-7,
+.logo-animate-blink #right-eye-2-7,
+.logo-animate-blink #right-eye-3-7,
+.logo-animate-blink #right-eye-4-7,
+.logo-animate-blink #left-eye-0-8,
+.logo-animate-blink #left-eye-1-8,
+.logo-animate-blink #left-eye-2-8,
+.logo-animate-blink #left-eye-3-8,
+.logo-animate-blink #left-eye-4-8,
+.logo-animate-blink #right-eye-0-8,
+.logo-animate-blink #right-eye-1-8,
+.logo-animate-blink #right-eye-2-8,
+.logo-animate-blink #right-eye-3-8,
+.logo-animate-blink #right-eye-4-8 { animation: blink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-taller #left-eye,
+.logo-animate-taller #right-eye {
+  transform-origin: center;
+  animation: logo-eye-taller var(--logo-animation-duration, 3s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+
+.logo-animate-shorter #left-eye,
+.logo-animate-shorter #right-eye {
+  transform-origin: center;
+  animation: logo-eye-shorter var(--logo-animation-duration, 3s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+
+/* Wink Left - Move each pixel to form wink line */
+/* Row 0 - moves to top of line */
+.logo-animate-wink-left #left-eye-0-0,
+.logo-animate-wink-left #left-eye-1-0,
+.logo-animate-wink-left #left-eye-2-0,
+.logo-animate-wink-left #left-eye-3-0,
+.logo-animate-wink-left #left-eye-4-0 { animation: wink-to-line-row0 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 1 - moves to top of line */
+.logo-animate-wink-left #left-eye-0-1,
+.logo-animate-wink-left #left-eye-1-1,
+.logo-animate-wink-left #left-eye-2-1,
+.logo-animate-wink-left #left-eye-3-1,
+.logo-animate-wink-left #left-eye-4-1 { animation: wink-to-line-row1 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 2 - moves to top of line */
+.logo-animate-wink-left #left-eye-0-2,
+.logo-animate-wink-left #left-eye-1-2,
+.logo-animate-wink-left #left-eye-2-2,
+.logo-animate-wink-left #left-eye-3-2,
+.logo-animate-wink-left #left-eye-4-2 { animation: wink-to-line-row2 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 3 - moves to top of line */
+.logo-animate-wink-left #left-eye-0-3,
+.logo-animate-wink-left #left-eye-1-3,
+.logo-animate-wink-left #left-eye-2-3,
+.logo-animate-wink-left #left-eye-3-3,
+.logo-animate-wink-left #left-eye-4-3 { animation: wink-to-line-row3 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 4 - forms the main line */
+.logo-animate-wink-left #left-eye-0-4,
+.logo-animate-wink-left #left-eye-1-4,
+.logo-animate-wink-left #left-eye-2-4 { animation: wink-to-tip-row4 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-left #left-eye-3-4,
+.logo-animate-wink-left #left-eye-4-4 { animation: wink-to-tip-row4 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 5 - forms the main line and tip */
+.logo-animate-wink-left #left-eye-0-5,
+.logo-animate-wink-left #left-eye-1-5,
+.logo-animate-wink-left #left-eye-2-5 { animation: wink-to-tip-row5 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-left #left-eye-3-5,
+.logo-animate-wink-left #left-eye-4-5 { animation: wink-to-tip-row5 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 6 - forms tip */
+.logo-animate-wink-left #left-eye-0-6,
+.logo-animate-wink-left #left-eye-1-6,
+.logo-animate-wink-left #left-eye-2-6 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-left #left-eye-3-6,
+.logo-animate-wink-left #left-eye-4-6 { animation: wink-to-tip-row6 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 7 - forms tip */
+.logo-animate-wink-left #left-eye-0-7,
+.logo-animate-wink-left #left-eye-1-7,
+.logo-animate-wink-left #left-eye-2-7 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-left #left-eye-3-7,
+.logo-animate-wink-left #left-eye-4-7 { animation: wink-to-tip-row7 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Row 8 - bottom row fades out */
+.logo-animate-wink-left #left-eye-0-8,
+.logo-animate-wink-left #left-eye-1-8,
+.logo-animate-wink-left #left-eye-2-8,
+.logo-animate-wink-left #left-eye-3-8,
+.logo-animate-wink-left #left-eye-4-8 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Wink Right - Same animations but pixels move to flipped positions */
+.logo-animate-wink-right #right-eye-0-0,
+.logo-animate-wink-right #right-eye-1-0,
+.logo-animate-wink-right #right-eye-2-0,
+.logo-animate-wink-right #right-eye-3-0,
+.logo-animate-wink-right #right-eye-4-0 { animation: wink-to-line-row0 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-1,
+.logo-animate-wink-right #right-eye-1-1,
+.logo-animate-wink-right #right-eye-2-1,
+.logo-animate-wink-right #right-eye-3-1,
+.logo-animate-wink-right #right-eye-4-1 { animation: wink-to-line-row1 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-2,
+.logo-animate-wink-right #right-eye-1-2,
+.logo-animate-wink-right #right-eye-2-2,
+.logo-animate-wink-right #right-eye-3-2,
+.logo-animate-wink-right #right-eye-4-2 { animation: wink-to-line-row2 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-3,
+.logo-animate-wink-right #right-eye-1-3,
+.logo-animate-wink-right #right-eye-2-3,
+.logo-animate-wink-right #right-eye-3-3,
+.logo-animate-wink-right #right-eye-4-3 { animation: wink-to-line-row3 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Right eye: tip on LEFT side (columns 0-1) */
+.logo-animate-wink-right #right-eye-0-4,
+.logo-animate-wink-right #right-eye-1-4 { animation: wink-to-tip-row4 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-right #right-eye-2-4,
+.logo-animate-wink-right #right-eye-3-4,
+.logo-animate-wink-right #right-eye-4-4 { animation: wink-to-tip-row4 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-5,
+.logo-animate-wink-right #right-eye-1-5 { animation: wink-to-tip-row5 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-right #right-eye-2-5,
+.logo-animate-wink-right #right-eye-3-5,
+.logo-animate-wink-right #right-eye-4-5 { animation: wink-to-tip-row5 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-6,
+.logo-animate-wink-right #right-eye-1-6 { animation: wink-to-tip-row6 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-right #right-eye-2-6,
+.logo-animate-wink-right #right-eye-3-6,
+.logo-animate-wink-right #right-eye-4-6 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-7,
+.logo-animate-wink-right #right-eye-1-7 { animation: wink-to-tip-row7 var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+.logo-animate-wink-right #right-eye-2-7,
+.logo-animate-wink-right #right-eye-3-7,
+.logo-animate-wink-right #right-eye-4-7 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+.logo-animate-wink-right #right-eye-0-8,
+.logo-animate-wink-right #right-eye-1-8,
+.logo-animate-wink-right #right-eye-2-8,
+.logo-animate-wink-right #right-eye-3-8,
+.logo-animate-wink-right #right-eye-4-8 { animation: wink-fade-extra var(--logo-animation-duration, 2s) ease-in-out var(--logo-animation-iteration, infinite); }
+
+/* Hide the separate wink curve elements since we're moving the original pixels */
+.logo-animate-wink-left #left-eye-wink-curve,
+.logo-animate-wink-right #right-eye-wink-curve {
+  display: none;
+}
+
+/* Sleep Animation - Apply fade in/out to eyes and Z shapes */
+
+/* Fade out all eye pixels */
+.logo-animate-sleep #left-eye,
+.logo-animate-sleep #right-eye { 
+  animation: sleep-eye-fade-out var(--logo-animation-duration, 4s) ease-in-out var(--logo-animation-iteration, infinite); 
+}
+
+/* Fade in Z shapes */
+.logo-animate-sleep #left-eye-z-shape,
+.logo-animate-sleep #right-eye-z-shape { 
+  animation: sleep-z-fade-in var(--logo-animation-duration, 4s) ease-in-out var(--logo-animation-iteration, infinite); 
+}
+
+/* Cute Face Animation - Eyes with white cross reflections inside */
+
+/* All eye pixels stay visible */
+.logo-animate-cute #left-eye,
+.logo-animate-cute #right-eye { 
+  animation: cute-pixel-stay var(--logo-animation-duration, 1s) ease-in-out var(--logo-animation-iteration, infinite); 
+}
+
+/* Hide reflections by default */
+#left-eye-cute-reflection-large,
+#left-eye-cute-reflection-small,
+#right-eye-cute-reflection-large,
+#right-eye-cute-reflection-small {
+  opacity: 0;
+}
+
+/* White cross reflections twinkling effect */
+@keyframes cute-reflection-twinkle-1 {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0.3; }
+  50% { opacity: 1; }
+  75% { opacity: 0.5; }
+}
+
+@keyframes cute-reflection-twinkle-2 {
+  0%, 100% { opacity: 0.5; }
+  25% { opacity: 1; }
+  50% { opacity: 0.3; }
+  75% { opacity: 1; }
+}
+
+@keyframes cute-reflection-twinkle-3 {
+  0%, 100% { opacity: 0.7; }
+  20% { opacity: 1; }
+  40% { opacity: 0.4; }
+  60% { opacity: 1; }
+  80% { opacity: 0.6; }
+}
+
+@keyframes cute-reflection-twinkle-4 {
+  0%, 100% { opacity: 0.6; }
+  30% { opacity: 1; }
+  50% { opacity: 0.4; }
+  70% { opacity: 1; }
+  90% { opacity: 0.5; }
+}
+
+/* Left eye reflections - each twinkles independently */
+.logo-animate-cute #left-eye-cute-reflection-large { 
+  opacity: 1;
+  animation: cute-reflection-twinkle-1 var(--logo-animation-duration, 1.5s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+
+.logo-animate-cute #left-eye-cute-reflection-small { 
+  opacity: 1;
+  animation: cute-reflection-twinkle-2 var(--logo-animation-duration, 1.8s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+
+/* Right eye reflections - each twinkles independently */
+.logo-animate-cute #right-eye-cute-reflection-large { 
+  opacity: 1;
+  animation: cute-reflection-twinkle-3 var(--logo-animation-duration, 1.6s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+
+.logo-animate-cute #right-eye-cute-reflection-small { 
+  opacity: 1;
+  animation: cute-reflection-twinkle-4 var(--logo-animation-duration, 1.7s) ease-in-out var(--logo-animation-iteration, infinite);
+}
+

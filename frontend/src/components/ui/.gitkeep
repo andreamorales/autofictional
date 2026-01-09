@@ -1,0 +1,8 @@
+# UI Components Directory
+
+shadcn/ui components will be added here when you run:
+```bash
+npx shadcn@latest add [component-name]
+```
+
+Components are copied locally so you can customize them freely.

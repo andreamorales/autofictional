@@ -1,0 +1,30 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
+import path from 'path'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    TanStackRouterVite(),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@/design-system': path.resolve(__dirname, '../shared/design-system'),
+    },
+  },
+  server: {
+    port: 3000,
+    host: true,
+    watch: {
+      usePolling: false,
+      interval: 100,
+    },
+  },
+  css: {
+    devSourcemap: true,
+  },
+})
+

@@ -1,0 +1,26 @@
+{
+  "name": "autofictional",
+  "version": "1.0.0",
+  "description": "Full-stack application with React frontend and Supabase backend",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "install:all": "npm install && cd frontend && npm install",
+    "backend:start": "cd backend && supabase start",
+    "backend:stop": "cd backend && supabase stop",
+    "backend:reset": "cd backend && supabase db reset",
+    "check:format": "cd frontend && npm run check:format",
+    "fix:format": "cd frontend && npm run fix:format",
+    "check:types": "cd frontend && npm run check:types",
+    "fix:all": "cd frontend && npm run fix:all"
+  },
+  "workspaces": [
+    "frontend"
+  ],
+  "devDependencies": {
+    "supabase": "^1.156.0"
+  }
+}
+
