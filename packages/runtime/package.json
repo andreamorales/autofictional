@@ -4,7 +4,6 @@
   "description": "Autofictional runtime provider for autonomous sidebar adaptation",
   "author": "",
   "license": "UNLICENSED",
-  "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
