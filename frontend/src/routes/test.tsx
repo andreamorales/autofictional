@@ -725,7 +725,7 @@ function TestPage() {
             <CardHeader>
               <CardTitle>Logo Animations</CardTitle>
               <CardDescription>
-                Making the TShape logo come alive with various eye animations
+                Making the Autofictional logo come alive with various eye animations
               </CardDescription>
             </CardHeader>
             <CardContent>
