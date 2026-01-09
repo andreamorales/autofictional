@@ -18,7 +18,7 @@ export default {
   	},
   	extend: {
   		fontFamily: {
-  			sans: ['Cabin', 'system-ui', 'sans-serif'],
+  			sans: ['Playfair Display', 'serif'],
   		},
   		colors: {
   			border: 'hsl(var(--border))',
@@ -190,9 +190,12 @@ export default {
   			'extrabold': '800', // Extra bold for emphasis
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			lg: '0',
+  			md: '0',
+  			sm: '0',
+  			DEFAULT: '0',
+  			none: '0',
+  			full: '0'
   		},
   		keyframes: {
   			'accordion-down': {

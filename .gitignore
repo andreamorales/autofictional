@@ -1,40 +1,47 @@
 # Dependencies
 node_modules/
-frontend/node_modules/
+.pnp
+.pnp.js
 
-# Environment variables
-.env
-.env.local
-.env.*.local
-frontend/.env
-frontend/.env.local
+# Testing
+coverage/
 
-# Build outputs
-frontend/dist/
-frontend/build/
+# Production
+build/
+dist/
 
-# Supabase
-.supabase/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
+# Misc
 .DS_Store
-Thumbs.db
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Logs
-*.log
 npm-debug.log*
 yarn-debug.log*
-pnpm-debug.log*
+yarn-error.log*
 lerna-debug.log*
+.pnpm-debug.log*
 
-# Temporary/corrupted files
--
-..--*
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
+# Package builds
+packages/*/dist/
+packages/*/node_modules/
+
+# Backup files
+*.backup
+*.bak
+
+# Temporary files
+*.tmp
+~ai-*

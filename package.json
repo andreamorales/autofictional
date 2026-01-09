@@ -14,10 +14,17 @@
     "check:format": "cd frontend && npm run check:format",
     "fix:format": "cd frontend && npm run fix:format",
     "check:types": "cd frontend && npm run check:types",
-    "fix:all": "cd frontend && npm run fix:all"
+    "fix:all": "cd frontend && npm run fix:all",
+    "packages:build": "cd packages/runtime && npm run build && cd ../cli && npm run build",
+    "packages:dev": "cd packages/runtime && npm run dev & cd ../cli && npm run dev",
+    "packages:link": "bash packages/dev-setup.sh",
+    "packages:unlink": "cd packages/runtime && npm unlink -g && cd ../cli && npm unlink -g",
+    "packages:publish": "bash packages/publish.sh both",
+    "publish:all": "bash publish-and-test.sh"
   },
   "workspaces": [
-    "frontend"
+    "frontend",
+    "packages/*"
   ],
   "devDependencies": {
     "supabase": "^1.156.0"

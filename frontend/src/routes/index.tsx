@@ -2,6 +2,7 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 import { Button } from '@/components/ui/button'
+import { Logo } from '@/components/logo'
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -26,24 +27,27 @@ function Index() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 to-purple-700 text-white p-l">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-background p-l">
       <header className="text-center mb-xl">
-        <h1 className="text-5xl font-bold mb-l">Autofictional</h1>
-        <p className="text-xl opacity-90">React + Supabase + TanStack Router + shadcn/ui</p>
+        <div className="flex justify-center mb-l">
+          <Logo className="w-16 h-auto text-foreground" />
+        </div>
+        <h1 className="text-5xl font-bold mb-l text-foreground">Autofictional</h1>
+        <p className="text-xl text-foreground/70">React + Supabase + TanStack Router + shadcn/ui</p>
       </header>
       <main className="flex flex-col gap-m">
         <Button
           onClick={handleTestConnection}
           disabled={loading}
           size="lg"
-          className="bg-white text-purple-600 hover:bg-white/90"
+          className="bg-foreground text-background hover:bg-foreground/90"
         >
           {loading ? 'Connecting...' : 'Test Supabase Connection'}
         </Button>
         <Button
           variant="outline"
           asChild
-          className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+          className="border-foreground/20 text-foreground hover:bg-foreground/5"
         >
           <Link to="/test">View Component Test Page →</Link>
         </Button>

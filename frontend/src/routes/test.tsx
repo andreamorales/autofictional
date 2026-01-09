@@ -21,7 +21,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { AlertCircle, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
-import '../../../shared/design-system/lib/logo-animations.css'
 import { Logo } from '@/components/logo'
 
 export const Route = createFileRoute('/test')({
@@ -36,34 +35,14 @@ function TestPage() {
     <div className="min-h-screen bg-background p-l">
       <div className="max-w-6xl mx-auto py-xl">
         <header className="mb-xl">
-          {/* Logo with circular grainy background */}
+          {/* Logo */}
           <div className="flex justify-center mb-l">
-            <div className="relative" style={{ width: '128px', height: '128px' }}>
-              {/* Circular grainy background with opacity gradient - fake shadow effect */}
-              <div 
-                className="absolute rounded-full grainy-gradient-light"
-                style={{
-                  width: '160px',
-                  height: '160px',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  maskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0) 70%)',
-                  WebkitMaskImage: 'radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0) 70%)',
-                  zIndex: 0,
-                }}
-              ></div>
-              <Logo 
-                animation="blink"
-                trackMouse={true}
-                eyeFollowIntensity={1.0}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 z-10"
-                style={{ width: '128px', height: '128px' }}
-              />
-            </div>
+            <Logo 
+              className="w-16 h-auto text-foreground"
+            />
           </div>
-          <h1 className="text-4xl font-bold text-semantic-foreground mb-s text-center">Component Test Page</h1>
-          <p className="text-semantic-foreground opacity-70 text-center">
+          <h1 className="text-4xl font-bold text-foreground mb-s text-center">Component Test Page</h1>
+          <p className="text-foreground opacity-70 text-center">
             Testing semantic spacing, colors, and shadcn/ui components
           </p>
         </header>
@@ -716,74 +695,6 @@ function TestPage() {
                 <p className="text-lg font-extrabold">The quick brown fox jumps over the lazy dog</p>
               </div>
             </div>
-          </Card>
-        </section>
-
-        {/* Logo Animations */}
-        <section className="mb-xl">
-          <Card>
-            <CardHeader>
-              <CardTitle>Logo Animations</CardTitle>
-              <CardDescription>
-                Making the Autofictional logo come alive with various eye animations
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2xl">
-                {/* Blink Animation */}
-                <div className="flex flex-col items-center gap-m">                  <Logo 
-                    animation="blink"
-                    className="w-32 h-32"
-                    style={{ width: '128px', height: '128px' }}
-                  />
-                  <h3 className="text-lg font-bold">Blink</h3>
-                  <p className="text-sm text-muted-foreground text-center">Both eyes blink together</p>
-                </div>
-
-                {/* Wink Left Animation */}
-                <div className="flex flex-col items-center gap-m">
-                  <Logo 
-                    animation="wink-left"
-                    className="w-32 h-32"
-                    style={{ width: '128px', height: '128px' }}
-                  />
-                  <h3 className="text-lg font-bold">Wink Left</h3>
-                  <p className="text-sm text-muted-foreground text-center">Left eye winks</p>
-                </div>
-
-                {/* Wink Right Animation */}
-                <div className="flex flex-col items-center gap-m">
-                  <Logo 
-                    animation="wink-right"
-                    className="w-32 h-32"
-                    style={{ width: '128px', height: '128px' }}
-                  />
-                  <h3 className="text-lg font-bold">Wink Right</h3>
-                  <p className="text-sm text-muted-foreground text-center">Right eye winks</p>
-                </div>
-
-                {/* Cute Face Animation */}
-                <div className="flex flex-col items-center gap-m">                  <Logo 
-                    animation="cute"
-                    className="w-32 h-32"
-                    style={{ width: '128px', height: '128px' }}
-                  />
-                  <h3 className="text-lg font-bold">Cute Face</h3>
-                  <p className="text-sm text-muted-foreground text-center">Adorable tiny eyes</p>
-                </div>
-
-                {/* Sleep Animation */}
-                <div className="flex flex-col items-center gap-m">
-                  <Logo 
-                    animation="sleep"
-                    className="w-32 h-32"
-                    style={{ width: '128px', height: '128px' }}
-                  />
-                  <h3 className="text-lg font-bold">Sleep (Zzz)</h3>
-                  <p className="text-sm text-muted-foreground text-center">Eyes transform into Z shapes</p>
-                </div>
-              </div>
-            </CardContent>
           </Card>
         </section>
 
